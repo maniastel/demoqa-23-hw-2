@@ -2,8 +2,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -35,7 +33,7 @@ public class FormTests {
 
         $("#subjectsInput").setValue("Arts").pressEnter();
         $("label[for='hobbies-checkbox-2']").click();
-        $("#uploadPicture").uploadFile(new File("src/attachment/picture.png"));
+        $("#uploadPicture").uploadFromClasspath("picture.png");
         $("#currentAddress").setValue("12 Street, City");
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#react-select-4-input").setValue("Noida").pressEnter();
